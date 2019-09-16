@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatricesTest", "MatricesTest\MatricesTest.csproj", "{F734F4C1-002B-4229-B79E-030F82544172}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.LinearAlgebra", "Math.LinearAlgebra\Math.LinearAlgebra.csproj", "{C2D8EBA5-14B8-4C3B-B251-99A6BEF1098C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolumeCalculation", "VolumeCalculation\VolumeCalculation.csproj", "{F5038267-F1A6-4B3B-BE92-DF3F25219E41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.LinearAlgebra.Tests", "Math.LinearAlgebra.Tests\Math.LinearAlgebra.Tests.csproj", "{34273734-B0C8-44DF-A5AB-5DEC1BE5CBA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOC", "IOC\IOC.csproj", "{E82CFC11-A8EF-4C0A-A0B1-8C5B9B4F12A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOC.Tests", "IOC.Tests\IOC.Tests.csproj", "{52D805FA-9DD0-4890-8296-7F34E0E5AF5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{D9E684DD-1A4E-4878-92DE-F10A1BDFC7B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F734F4C1-002B-4229-B79E-030F82544172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F734F4C1-002B-4229-B79E-030F82544172}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F734F4C1-002B-4229-B79E-030F82544172}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F734F4C1-002B-4229-B79E-030F82544172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2D8EBA5-14B8-4C3B-B251-99A6BEF1098C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2D8EBA5-14B8-4C3B-B251-99A6BEF1098C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2D8EBA5-14B8-4C3B-B251-99A6BEF1098C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2D8EBA5-14B8-4C3B-B251-99A6BEF1098C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5038267-F1A6-4B3B-BE92-DF3F25219E41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5038267-F1A6-4B3B-BE92-DF3F25219E41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5038267-F1A6-4B3B-BE92-DF3F25219E41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5038267-F1A6-4B3B-BE92-DF3F25219E41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34273734-B0C8-44DF-A5AB-5DEC1BE5CBA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34273734-B0C8-44DF-A5AB-5DEC1BE5CBA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34273734-B0C8-44DF-A5AB-5DEC1BE5CBA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34273734-B0C8-44DF-A5AB-5DEC1BE5CBA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E82CFC11-A8EF-4C0A-A0B1-8C5B9B4F12A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E82CFC11-A8EF-4C0A-A0B1-8C5B9B4F12A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E82CFC11-A8EF-4C0A-A0B1-8C5B9B4F12A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E82CFC11-A8EF-4C0A-A0B1-8C5B9B4F12A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52D805FA-9DD0-4890-8296-7F34E0E5AF5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52D805FA-9DD0-4890-8296-7F34E0E5AF5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52D805FA-9DD0-4890-8296-7F34E0E5AF5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52D805FA-9DD0-4890-8296-7F34E0E5AF5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9E684DD-1A4E-4878-92DE-F10A1BDFC7B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9E684DD-1A4E-4878-92DE-F10A1BDFC7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9E684DD-1A4E-4878-92DE-F10A1BDFC7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9E684DD-1A4E-4878-92DE-F10A1BDFC7B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECFFF130-8644-4B2C-A7A9-B52D6A59BFAC}
+	EndGlobalSection
+EndGlobal
