@@ -39,6 +39,11 @@ namespace UI
             {
                 volumeCalculator.PillarLength = upDownCellSize.Value.GetValueOrDefault();
                 volumeCalculator.PillarWidth = upDownCellSize.Value.GetValueOrDefault();
+                volumeCalculator.BaseHorizonOffset = upDownbhOffset.Value.GetValueOrDefault();
+                volumeCalculator.FluidContactDepth=upDownfContact.Value.GetValueOrDefault();
+
+                var oilMatrix = volumeCalculator.GetMatrixTobeCaluclated(topHorizonMatrix);
+                var volumeInFeet = volumeCalculator.CalculateVolume(oilMatrix);
             }
         }
     }
