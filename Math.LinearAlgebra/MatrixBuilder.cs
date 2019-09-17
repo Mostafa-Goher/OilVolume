@@ -38,6 +38,21 @@ namespace Math.LinearAlgebra
         /// </summary>
         public IMatrix FromFile(string filePath)
         {
+            var data = GetFileData(filePath);
+
+            var matrix = matrixFactory.CreateMatrix(data.Count, data.FirstOrDefault()?.Length ?? 0);
+            for (int row = 0; row < matrix.RowCount; row++)
+            {
+                for (int column = 0; column < matrix.ColumnCount; column++)
+                {
+                    matrix[row, column] = data[row].ElementAt(column);
+                }
+            }
+            return matrix;
+        }
+
+        private List<double[]> GetFileData(string filePath)
+        {
             var data = new List<double[]>();
             using (var reader = fileSystem.File.OpenText(filePath))
             {
@@ -59,15 +74,7 @@ namespace Math.LinearAlgebra
                 }
             }
 
-            var matrix = matrixFactory.CreateMatrix(data.Count, data.FirstOrDefault()?.Length ?? 0);
-            for (int row = 0; row < matrix.RowCount; row++)
-            {
-                for (int column = 0; column < matrix.ColumnCount; column++)
-                {
-                    matrix[row, column] = data[row].ElementAt(column);
-                }
-            }
-            return matrix;
+            return data;
         }
 
         private double Parse(string str)

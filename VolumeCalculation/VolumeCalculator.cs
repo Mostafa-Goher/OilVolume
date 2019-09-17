@@ -38,19 +38,18 @@ namespace VolumeCalculation
 
             var baseHorizon = topHorizon.Add(BaseHorizonOffset * Constants.FeetsInMeter);
 
-            var tresholdValue = FluidContactDepth * Constants.FeetsInMeter;
-            var fluidContact = matrixBuilder.Dense(topHorizon.RowCount, topHorizon.ColumnCount, tresholdValue);
+            var fluidContact = matrixBuilder.Dense(topHorizon.RowCount, topHorizon.ColumnCount, FluidContactDepth * Constants.FeetsInMeter);
 
-            var tresholdSurface = fluidContact.PointwiseMinimum(baseHorizon);
+            var thresholdSurface = fluidContact.PointwiseMinimum(baseHorizon);
 
-            var distanceBetweenSurfaces = tresholdSurface.Subtract(topHorizon);
+            var distanceBetweenSurfaces = thresholdSurface.Subtract(topHorizon);
             return distanceBetweenSurfaces;
         }
 
         /// <summary>
         /// Get total volume in feet
         /// </summary>
-        public double CalculateVolume(IMatrix oilMatrix)
+        public double CalculateVolumeInFeet(IMatrix oilMatrix)
         {
             double volume = 0d;
             for (int row = 0; row < oilMatrix.RowCount; row++)
@@ -64,6 +63,18 @@ namespace VolumeCalculation
                 }
             }
             return volume;
+        }
+
+        public double CalculateVolumeInMeters(IMatrix oilMatrix)
+        {
+            var feet = CalculateVolumeInFeet(oilMatrix);
+            return feet == 0 ? 0 : feet / Constants.FeetsInMeter;
+        }
+
+        public double CalculateVolumeInBarrels(IMatrix oilMatrix)
+        {
+            var meters = CalculateVolumeInMeters(oilMatrix);
+            return meters * Constants.BarrelsInMeter;
         }
     }
 }
