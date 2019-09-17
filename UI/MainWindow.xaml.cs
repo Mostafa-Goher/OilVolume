@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using Math.LinearAlgebra;
 using Microsoft.Win32;
 using VolumeCalculation;
@@ -44,6 +45,11 @@ namespace UI
 
                 var oilMatrix = volumeCalculator.GetMatrixTobeCaluclated(topHorizonMatrix);
                 var volumeInFeet = volumeCalculator.CalculateVolume(oilMatrix);
+                var volumeInMeters = volumeInFeet / Constants.FeetsInMeter;
+                var barrels = volumeInMeters * Constants.BarrelsInMeter;
+                MessageBox.Show($"Volume in Feet: {volumeInFeet}{Environment.NewLine}" +
+                                $"Volume in Meters: {volumeInMeters}{Environment.NewLine}" +
+                                $"Volume in Barrels: {barrels}");
             }
         }
     }

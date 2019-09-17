@@ -10,8 +10,6 @@ namespace VolumeCalculation
     public class VolumeCalculator : IVolumeCalculator
     {
         private readonly IMatrixBuilder matrixBuilder;
-        private const double feetsInMeter = 3.280839895d;
-        private const double barrelsInMeter = 6.289810569d;
 
         public VolumeCalculator(IMatrixBuilder matrixBuilder)
         {
@@ -38,9 +36,9 @@ namespace VolumeCalculation
         public IMatrix GetMatrixTobeCaluclated(IMatrix topHorizon)
         {
 
-            var baseHorizon = topHorizon.Add(BaseHorizonOffset * feetsInMeter);
+            var baseHorizon = topHorizon.Add(BaseHorizonOffset * Constants.FeetsInMeter);
 
-            var tresholdValue = FluidContactDepth * feetsInMeter;
+            var tresholdValue = FluidContactDepth * Constants.FeetsInMeter;
             var fluidContact = matrixBuilder.Dense(topHorizon.RowCount, topHorizon.ColumnCount, tresholdValue);
 
             var tresholdSurface = fluidContact.PointwiseMinimum(baseHorizon);

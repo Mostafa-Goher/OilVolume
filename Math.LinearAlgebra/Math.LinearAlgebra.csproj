@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="IMatrix.cs" />
     <Compile Include="IMatrixBuilder.cs" />
     <Compile Include="IMatrixFactory.cs" />
