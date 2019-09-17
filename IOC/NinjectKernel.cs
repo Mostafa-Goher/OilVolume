@@ -1,6 +1,5 @@
 ﻿using Math.LinearAlgebra;
 using Ninject;
-using Ninject.Syntax;
 using System.IO.Abstractions;
 using VolumeCalculation;
 
@@ -13,19 +12,13 @@ namespace IOC
         public static IKernel CreateKernel()
         {
             Kernel = new StandardKernel();
-            Bind<IMatrixFactory, MatrixFactory>();
-            Bind<IMatrixBuilder, MatrixBuilder>();
-            Bind<IFileSystem, FileSystem>();
-            Bind<IVolumeCalculator, VolumeCalculator>();
 
+            Kernel.Bind<IMatrixFactory>().To<MatrixFactory>();
+            Kernel.Bind<IMatrixBuilder>().To<MatrixBuilder>();
+            Kernel.Bind<IFileSystem>().To<FileSystem>();
+            Kernel.Bind<IVolumeCalculator>().To<VolumeCalculator>();
             
             return Kernel;
-        }
-
-        private static IBindingWhenInNamedWithOrOnSyntax<TConcrete> Bind<TInterface, TConcrete>()
-          where TConcrete : TInterface
-        {
-            return Kernel.Bind<TInterface>().To<TConcrete>();
         }
     }
 }
