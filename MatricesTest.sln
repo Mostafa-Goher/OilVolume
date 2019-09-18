@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.329
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.LinearAlgebra", "Math.LinearAlgebra\Math.LinearAlgebra.csproj", "{C2D8EBA5-14B8-4C3B-B251-99A6BEF1098C}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOC.Tests", "IOC.Tests\IOC.Tests.csproj", "{52D805FA-9DD0-4890-8296-7F34E0E5AF5E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{D9E684DD-1A4E-4878-92DE-F10A1BDFC7B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolumeCalculation.Tests", "VolumeCalculation.Tests\VolumeCalculation.Tests.csproj", "{4F202678-5B99-4FFD-B1D8-67EB0734E88F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{D9E684DD-1A4E-4878-92DE-F10A1BDFC7B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9E684DD-1A4E-4878-92DE-F10A1BDFC7B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9E684DD-1A4E-4878-92DE-F10A1BDFC7B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F202678-5B99-4FFD-B1D8-67EB0734E88F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F202678-5B99-4FFD-B1D8-67EB0734E88F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F202678-5B99-4FFD-B1D8-67EB0734E88F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F202678-5B99-4FFD-B1D8-67EB0734E88F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

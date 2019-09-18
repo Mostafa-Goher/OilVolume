@@ -46,9 +46,6 @@ namespace VolumeCalculation
             return distanceBetweenSurfaces;
         }
 
-        /// <summary>
-        /// Get total volume in feet
-        /// </summary>
         public double CalculateVolumeInFeet(IMatrix oilMatrix)
         {
             double volume = 0d;

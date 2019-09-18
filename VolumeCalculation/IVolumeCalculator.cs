@@ -9,7 +9,10 @@ namespace VolumeCalculation
         int PillarLength { get; set; }
         int PillarWidth { get; set; }
 
-        double CalculateVolume(IMatrix oilMatrix);
+        double CalculateVolumeInFeet(IMatrix oilMatrix);
+        double CalculateVolumeInMeters(IMatrix oilMatrix);
+        double CalculateVolumeInBarrels(IMatrix oilMatrix);
+
         IMatrix GetMatrixTobeCaluclated(IMatrix topHorizon);
     }
 }
