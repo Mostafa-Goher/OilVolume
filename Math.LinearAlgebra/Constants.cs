@@ -9,6 +9,7 @@ namespace Math.LinearAlgebra
     public class Constants
     {
         public const double FeetsInMeter = 3.280839895d;
+        //According to brief google search..
         public const double BarrelsInMeter = 6.289810569d;
     }
 }

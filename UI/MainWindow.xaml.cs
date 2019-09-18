@@ -44,7 +44,7 @@ namespace UI
                 volumeCalculator.FluidContactDepth=upDownfContact.Value.GetValueOrDefault();
 
                 var oilMatrix = volumeCalculator.GetMatrixTobeCaluclated(topHorizonMatrix);
-                var volumeInFeet = volumeCalculator.CalculateVolume(oilMatrix);
+                var volumeInFeet = volumeCalculator.CalculateVolumeInFeet(oilMatrix);
                 var volumeInMeters = volumeInFeet / Constants.FeetsInMeter;
                 var barrels = volumeInMeters * Constants.BarrelsInMeter;
                 MessageBox.Show($"Volume in Feet: {volumeInFeet}{Environment.NewLine}" +
