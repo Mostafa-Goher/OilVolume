@@ -6,10 +6,11 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="500
+        Title="MainWindow" Height="600" Width="500
         ">
     <Grid Margin="10">
         <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -22,7 +23,7 @@
             <ColumnDefinition Width="209*"></ColumnDefinition>
             <ColumnDefinition Width="146*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label Content="File:" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="30" Margin="0,20,0,20.4"/>
+        <Label Content="File:" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="30" Margin="0,20,0,20.4" />
         <Label Content="Matrix Dimensions:" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Height="25" Width="110" Margin="0,20.6,0,20.8"/>
         <Label Content="Cell Size:" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Height="25" Width="56" Margin="0,21.2,0,21"/>
         <Label Content="Base Horizon Offset:" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" Height="26" Width="117" Margin="0,20,0,20.4"/>
@@ -35,7 +36,13 @@
         <Label Content="Meters" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="50" Grid.Column="2" Grid.Row="3" Margin="9,20,0,20.4"/>
         <xctk:IntegerUpDown Name="upDownfContact" Grid.Row="4" Grid.Column="1" Margin="14.6,21.6,117,19.6" Value="3000" Minimum="0"/>
         <Label Content="Meters" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="50" Grid.Column="2" Grid.Row="4" Margin="9,20.6,0,20.6"/>
+        <Label Content="Calculation Unit:" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26"  Grid.Row="5" Margin="9,20.6,0,20.6"/>
         <Button Content="Browse" Grid.Column="2" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="75" Height="19" Margin="9,24,0,23.4" Click="Button_Click"/>
-        <Button Content="Calculate" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="75" Height="19" Margin="9,23.4,0,24" Click="Button_Click_1"/>
+        <Button Content="Calculate" Grid.Column="2" Grid.Row="6" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="75" Height="19" Margin="9,23.4,0,24" Click="Button_Click_1"/>
+        <ComboBox Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="5" VerticalAlignment="Center" Width="120" Margin="14.6,26.2,0,30.2" Name="cmbUnit">
+            <ComboBoxItem IsSelected="True">Feet</ComboBoxItem>
+            <ComboBoxItem>Meters</ComboBoxItem>
+            <ComboBoxItem>Barrels</ComboBoxItem>
+        </ComboBox>
     </Grid>
 </Window>

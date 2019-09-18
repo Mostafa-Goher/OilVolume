@@ -43,13 +43,20 @@ namespace UI
                 volumeCalculator.BaseHorizonOffset = upDownbhOffset.Value.GetValueOrDefault();
                 volumeCalculator.FluidContactDepth=upDownfContact.Value.GetValueOrDefault();
 
-                var oilMatrix = volumeCalculator.GetMatrixTobeCaluclated(topHorizonMatrix);
-                var volumeInFeet = volumeCalculator.CalculateVolumeInFeet(oilMatrix);
-                var volumeInMeters = volumeInFeet / Constants.FeetsInMeter;
-                var barrels = volumeInMeters * Constants.BarrelsInMeter;
-                MessageBox.Show($"Volume in Feet: {volumeInFeet}{Environment.NewLine}" +
-                                $"Volume in Meters: {volumeInMeters}{Environment.NewLine}" +
-                                $"Volume in Barrels: {barrels}");
+                var oilMatrix = volumeCalculator.GetMatrixTobeCalculated(topHorizonMatrix);
+                
+                switch (((System.Windows.Controls.ComboBoxItem)cmbUnit.SelectedItem).Content)
+                {
+                    case "Feet":
+                        MessageBox.Show($"Volume in Feet: {volumeCalculator.CalculateVolumeInFeet(oilMatrix)}");
+                        break;
+                    case "Meters":
+                        MessageBox.Show($"Volume in Meters: {volumeCalculator.CalculateVolumeInMeters(oilMatrix)}");
+                        break;
+                    case "Barrels":
+                        MessageBox.Show($"Volume in Barrels: {volumeCalculator.CalculateVolumeInBarrels(oilMatrix)}");
+                        break;
+                }
             }
         }
     }
