@@ -12,7 +12,5 @@ namespace VolumeCalculation
         double CalculateVolumeInFeet(IMatrix oilMatrix);
         double CalculateVolumeInMeters(IMatrix oilMatrix);
         double CalculateVolumeInBarrels(IMatrix oilMatrix);
-
-        IMatrix GetMatrixTobeCalculated(IMatrix topHorizon);
     }
 }

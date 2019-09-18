@@ -42,19 +42,17 @@ namespace UI
                 volumeCalculator.PillarWidth = upDownCellSize.Value.GetValueOrDefault();
                 volumeCalculator.BaseHorizonOffset = upDownbhOffset.Value.GetValueOrDefault();
                 volumeCalculator.FluidContactDepth=upDownfContact.Value.GetValueOrDefault();
-
-                var oilMatrix = volumeCalculator.GetMatrixTobeCalculated(topHorizonMatrix);
                 
                 switch (((System.Windows.Controls.ComboBoxItem)cmbUnit.SelectedItem).Content)
                 {
                     case "Feet":
-                        MessageBox.Show($"Volume in Feet: {volumeCalculator.CalculateVolumeInFeet(oilMatrix)}");
+                        MessageBox.Show($"Volume in Feet: {volumeCalculator.CalculateVolumeInFeet(topHorizonMatrix)}");
                         break;
                     case "Meters":
-                        MessageBox.Show($"Volume in Meters: {volumeCalculator.CalculateVolumeInMeters(oilMatrix)}");
+                        MessageBox.Show($"Volume in Meters: {volumeCalculator.CalculateVolumeInMeters(topHorizonMatrix)}");
                         break;
                     case "Barrels":
-                        MessageBox.Show($"Volume in Barrels: {volumeCalculator.CalculateVolumeInBarrels(oilMatrix)}");
+                        MessageBox.Show($"Volume in Barrels: {volumeCalculator.CalculateVolumeInBarrels(topHorizonMatrix)}");
                         break;
                 }
             }

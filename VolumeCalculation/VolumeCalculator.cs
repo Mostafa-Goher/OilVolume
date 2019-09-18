@@ -17,7 +17,7 @@ namespace VolumeCalculation
         }
 
         /// <summary>
-        /// Base Horizon Offset compaired to the top horizon in meters
+        /// Base Horizon Offset compared to the top horizon in meters
         /// </summary>
         public int BaseHorizonOffset { get; set; } = 100;
 
@@ -29,11 +29,38 @@ namespace VolumeCalculation
         public int PillarWidth { get; set; } = 200;
         public int PillarLength { get; set; } = 200;
 
-        /// <summary>
-        /// This will determine the matrix that actually contains oil/gas and return it in case
-        /// the UI needs to render it
-        /// </summary>
-        public IMatrix GetMatrixTobeCalculated(IMatrix topHorizon)
+        public double CalculateVolumeInFeet(IMatrix topHorizon)
+        {
+            var oilMatrix = GetMatrixToBeCalculated(topHorizon);
+            double volume = 0d;
+            for (int row = 0; row < oilMatrix.RowCount; row++)
+            {
+                for (int column = 0; column < oilMatrix.ColumnCount; column++)
+                {
+                    var height = oilMatrix[row, column];
+                    if (height <= 0)
+                        continue;
+                    //every data point represents the height of a pillar filled with oil, the volume of which is width * length  * height
+                    volume += PillarWidth * PillarLength * height;
+                }
+            }
+            return volume;
+        }
+
+        public double CalculateVolumeInMeters(IMatrix topHorizon)
+        {
+            var feet = CalculateVolumeInFeet(topHorizon);
+            return feet * Constants.FeetsToMeter;
+        }
+
+        public double CalculateVolumeInBarrels(IMatrix topHorizon)
+        {
+            var feet = CalculateVolumeInFeet(topHorizon);
+            return feet * Constants.FeetsToBarrels;
+        }
+
+        
+        private IMatrix GetMatrixToBeCalculated(IMatrix topHorizon)
         {
             //Constructs the base horizon by adding a scalar to all values from top horizon
             var baseHorizon = topHorizon.Add(BaseHorizonOffset * Constants.FeetsInMeter);
@@ -47,35 +74,6 @@ namespace VolumeCalculation
             //create a matrix to hold the distances between top and the threshold, negative values will be ignored during calculating the volume 
             var distanceBetweenSurfaces = thresholdSurface.Subtract(topHorizon);
             return distanceBetweenSurfaces;
-        }
-
-        public double CalculateVolumeInFeet(IMatrix oilMatrix)
-        {
-            double volume = 0d;
-            for (int row = 0; row < oilMatrix.RowCount; row++)
-            {
-                for (int column = 0; column < oilMatrix.ColumnCount; column++)
-                {
-                    var distance = oilMatrix[row, column];
-                    if (distance <= 0)
-                        continue;
-                    //every data point represents the hight of a pillar filled with oil, the volume of which is width * length  * hight
-                    volume += PillarWidth * PillarLength * distance;
-                }
-            }
-            return volume;
-        }
-
-        public double CalculateVolumeInMeters(IMatrix oilMatrix)
-        {
-            var feet = CalculateVolumeInFeet(oilMatrix);
-            return feet == 0 ? 0 : feet * Constants.FeetsToMeter;
-        }
-
-        public double CalculateVolumeInBarrels(IMatrix oilMatrix)
-        {
-            var feet = CalculateVolumeInFeet(oilMatrix);
-            return feet == 0 ? 0 : feet * Constants.FeetsToBarrels;
         }
     }
 }

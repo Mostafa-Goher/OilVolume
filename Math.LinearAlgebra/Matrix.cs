@@ -73,7 +73,7 @@
         }
 
         /// <summary>
-        /// Compare a scalar value to all elemnts in the matrix and set the value for the maximum of the 2
+        /// Compare a scalar value to all elements in the matrix and set the value for the maximum of the 2
         /// </summary>
         public IMatrix PointwiseMaximum(double scalar)
         {
@@ -90,24 +90,24 @@
         }
 
         /// <summary>
-        /// Compare a matrix to all elemnts in the matrix and set the value for the maximum of the 2
+        /// Compare a matrix to all elements in the matrix and set the value for the maximum of the 2
         /// </summary>
-        public IMatrix PointwiseMaximum(IMatrix matrixToCompair)
+        public IMatrix PointwiseMaximum(IMatrix matrixToCompare)
         {
             var matrix = this.Clone();
             for (int row = 0; row < RowCount; row++)
             {
                 for (int column = 0; column < ColumnCount; column++)
                 {
-                    if (matrixToCompair[row, column] > matrix[row, column])
-                        matrix[row, column] = matrixToCompair[row, column];
+                    if (matrixToCompare[row, column] > matrix[row, column])
+                        matrix[row, column] = matrixToCompare[row, column];
                 }
             }
             return matrix;
         }
 
         /// <summary>
-        /// Compare a scalar value to all elemnts in the matrix and set the value for the minimum of the 2
+        /// Compare a scalar value to all elements in the matrix and set the value for the minimum of the 2
         /// </summary>
         public IMatrix PointwiseMinimum(double scalar)
         {
@@ -124,17 +124,17 @@
         }
 
         /// <summary>
-        /// Compare a matrix to all elemnts in the matrix and set the value for the minimum of the 2
+        /// Compare a matrix to all elements in the matrix and set the value for the minimum of the 2
         /// </summary>
-        public IMatrix PointwiseMinimum(IMatrix matrixToCompair)
+        public IMatrix PointwiseMinimum(IMatrix matrixToCompare)
         {
             var matrix = this.Clone();
             for (int row = 0; row < RowCount; row++)
             {
                 for (int column = 0; column < ColumnCount; column++)
                 {
-                    if (matrixToCompair[row, column] < matrix[row, column])
-                        matrix[row, column] = matrixToCompair[row, column];
+                    if (matrixToCompare[row, column] < matrix[row, column])
+                        matrix[row, column] = matrixToCompare[row, column];
                 }
             }
             return matrix;
@@ -153,6 +153,7 @@
             return matrix;
         }
 
+        //show row and column counts to see at a glance during debugging 
         public override string ToString()
         {
             return $"{RowCount}x{ColumnCount}";

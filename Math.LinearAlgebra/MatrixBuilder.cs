@@ -18,7 +18,7 @@ namespace Math.LinearAlgebra
         }
 
         /// <summary>
-        /// Create a Matrix object with all elemnts equal to a scalar value
+        /// Create a Matrix object with all elements equal to a scalar value
         /// </summary>
         public IMatrix Dense(int rows, int columns, double value)
         {
@@ -34,7 +34,7 @@ namespace Math.LinearAlgebra
         }
 
         /// <summary>
-        /// Create a Matrix object from file where values are seperated by a white space
+        /// Create a Matrix object from file where values are separated by a white space
         /// </summary>
         public IMatrix FromFile(string filePath)
         {
